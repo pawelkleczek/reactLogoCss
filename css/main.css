@@ -1,199 +1,51 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-
-/**
- * [Main underlying circles]
- */
-
-body {
-    width: 100%;
-    max-width: 1280px;
-	background-color: mintcream;
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
 }
-
-
-.container {
-    width: 400px;
-	height: 400px;
-    margin: 25px auto;
-    position: relative;
+.first-circle {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  border: 8px solid #00d8ff;
+  border-radius: 50%;
+  top: 60px;
 }
-
-div {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    position: absolute;
+.second-circle {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  border: 8px solid #00d8ff;
+  border-radius: 50%;
+  transform: rotate(60deg);
+  top: 60px;
 }
-
-@keyframes show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.third-circle {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  border: 8px solid #00d8ff;
+  border-radius: 50%;
+  transform: rotate(-60deg);
+  top: 60px;
 }
-
-@keyframes hide {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+.dot {
+  position: absolute;
+  width:36px;
+  height:36px;
+  background-color: #00d8ff;
+  border-radius: 50%;
+  top: 82px;
+  left: 82px;
 }
-
-.main-circle {
-    z-index: 1;
-}
-
-#main-circle-1 {
-	background-color: lightpink;
-    left: 0px;
-    top: 0px;
-    animation: hide 2s 16s 1 normal forwards;
-}
-
-@keyframes right-circle-born {
-    0% {
-        left: 0px;
-    }
-    100% {
-        left: 240px;
-    }
-}
-
-@keyframes right-circle-left {
-    0% {
-        left: 240px;
-    }
-    100% {
-        left: 160px;
-    }
-}
-
-#main-circle-2 {
-	background-color: lightseagreen;
-    top: 0px;
-    animation: right-circle-born 2s 2s 1 normal forwards, right-circle-left 2s 6s 1 normal forwards, hide 2s 16s 1 normal forwards;
-}
-
-@keyframes bottom-circle-born {
-    0% {
-        top: 0px;
-    }
-    100% {
-        top: 240px;
-    }
-}
-
-@keyframes bottom-circle-right {
-    0% {
-        left: 0px;
-    }
-    100% {
-        left: 80px;
-    }
-}
-
-@keyframes bottom-circle-up {
-    0% {
-        top: 240px;
-    }
-    100% {
-        top: 140px;
-    }
-}
-
-#main-circle-3 {
-	background-color: lightsalmon;
-    animation: bottom-circle-born 2s 4s 1 normal forwards, bottom-circle-right 2s 8s 1 normal forwards, bottom-circle-up 2s 10s 1 normal forwards, hide 2s 16s 1 normal forwards;
-}
-
-
-/**
- * [first set of circles imposed on main circles to form moon-like shadows]
- */
-
-.moon-like-shadow {
-    position: absolute;
-    overflow: hidden;
-    z-index: 2;
-}
-
-#blank-circle-1 {
-    left: 0px;
-    top: 0px;
-}
-
-#blank-circle-2 {
-    left: 160px;
-    top: 0px;
-}
-
-#blank-circle-3 {
-    left: 80px;
-    top: 140px;
-}
-
-
-/**
- * [second set of circles imposed on first set of circles imposed on main circles to form moon-like shadows]
- */
-
-.shadows {
-    z-index: 3;
-    background-color: lightskyblue;
-    opacity: 0;
-}
-
-#shadow-top {
-    margin-left: 160px;
-    margin-top: 0px;
-    animation: show 1s 12s 1 normal forwards;
-}
-
-#shadow-right {
-    margin-left: -80px;
-    margin-top: 140px;
-    animation: show 1s 13s 1 normal forwards;
-}
-
-#shadow-left {
-    margin-left: -80px;
-    margin-top: -140px;
-    animation: show 1s 14s 1 normal forwards;
-}
-
-
-/**
- * [Inner blind spot]
- */
-
-#inner-spot-1 {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    overflow: hidden;
-    z-index: 4;
-}
-
-#inner-spot-2 {
-    margin-left: 160px;
-    overflow: hidden;
-}
-
-#blind-spot {
-    margin-left: -80px;
-    margin-top: 140px;
-    background-color: mintcream;
-    z-index: 4;
-    position: static;
-    opacity: 0;
-    animation: show 1s 15s 1 normal forwards;
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
