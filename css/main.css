@@ -5,6 +5,7 @@
   position: relative;
   width: 200px;
   height: 200px;
+  animation: rotation 23s linear infinite;
 }
 .first-circle {
   position: absolute;
